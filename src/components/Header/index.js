@@ -5,6 +5,7 @@ import Button from "../Button";
 
 export default class Header extends React.Component {
 
+    /** on button click handler to show alert */
     btnClickHandler () {
         alert('The button is clicked')
     }

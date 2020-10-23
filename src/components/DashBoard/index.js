@@ -5,14 +5,17 @@ import OverViewItem from "./OverViewItem";
 import TripDetails from "../TripDetails";
 
 const DashBoard = (props) => {
+    /** setting local states */
     let [tripDetails, setTripDetails] = React.useState({});
-    let [calenderStartDate,setCalenderStartDate] = React.useState('');
-    let [calenderEndDate,setCalenderEndDate] = React.useState('');
+    let [calenderStartDate, setCalenderStartDate] = React.useState("");
+    let [calenderEndDate, setCalenderEndDate] = React.useState("");
 
+    /** formatting time into hh:mm format */
     const getTime = (d) => {
         return `${d.toLocaleString("en-US", { hour: "numeric", minute: "numeric", hour12: true })}`;
     };
 
+    /** format date into dd/mm/yy format */
     function formattedDate(d = new Date()) {
         return [d.getDate(), d.getMonth() + 1, d.getFullYear()]
             .map((n) => (n < 10 ? `0${n}` : `${n}`))
@@ -20,6 +23,7 @@ const DashBoard = (props) => {
             .concat(` at ${getTime(d)}`);
     }
 
+    /** to calculate total trip time - trip wise */
     const getTotalTimeTrip = (startDate, endDate) => {
         var seconds = Math.floor((endDate - startDate) / 1000);
         var minutes = Math.floor(seconds / 60);
@@ -33,6 +37,7 @@ const DashBoard = (props) => {
         return `${hours} Hrs ${minutes} Minutes`;
     };
 
+    /** to fetch trip details from api */
     const fetchTripDetails = async () => {
         let response = await fetch("http://amazon.watsoo.com/watsoo-amazon-api//trip-controller-web/v1/vehicle/wise/summary/36", {
             method: "POST",
@@ -54,22 +59,20 @@ const DashBoard = (props) => {
         setTripDetails(data);
     };
 
+    /** on initial render fetch details by call an async function */
     React.useEffect(() => {
         fetchTripDetails();
     }, []);
 
+    /** on click change start date */
     const startDateChangeHandler = (e) => {
-        
-        setCalenderStartDate(e.target.value)
+        setCalenderStartDate(e.target.value);
     };
-
+    /** on click change end date */
     const endDateChangeHandler = (e) => {
-        
-        setCalenderEndDate(e.target.value)
+        setCalenderEndDate(e.target.value);
     };
-
-    
-
+    /** collapse table funtionality */
     const collapseHandler = (e) => {
         if (e.target.closest(".trip-item-details-complete").nextElementSibling.style.display === "none") {
             e.target.closest(".trip-item-details-complete").nextElementSibling.style.display = "block";
@@ -79,7 +82,7 @@ const DashBoard = (props) => {
             e.target.innerHTML = "+";
         }
     };
-
+    /** on button click show an alert*/
     const btnClickHandler = () => {
         alert("The button is clicked");
     };
@@ -111,7 +114,7 @@ const DashBoard = (props) => {
                         </div>
                     </div>
                     <div className="search">
-                        <Button iconName="fa-search" color="#01c5c4"/>
+                        <Button iconName="fa-search" color="#01c5c4" />
                     </div>
                     <div className="export">
                         <Button iconName="fa-upload" btnText="Export" outLineInColor="#01c5c4" />
