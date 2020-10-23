@@ -1,0 +1,139 @@
+.dashboard {
+    width: 95%;
+    margin: 0 auto;
+    padding: 20px 0px 10px;
+}
+
+button {
+    border: 0;
+    color: #fff;
+}
+
+.dahbaord-header,
+.filter-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-section > div {
+    padding: 0px 5px;
+}
+
+.group label {
+    padding-right: 5px;
+}
+
+.breadcrumb-links .highlight {
+    color: #8bcdcd;
+    font-weight: 500;
+}
+
+.cards-details {
+    display: grid;
+
+    grid-gap: 10px;
+    margin-top: 10px;
+}
+
+.overview-details {
+    display: grid;
+
+    grid-gap: 10px;
+}
+
+.other-details .card-item {
+    grid-row: 1/4/3/4;
+}
+
+.card-item {
+    color: #fff;
+    padding: 5px;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+}
+
+.card-item i {
+    margin-right: 5px;
+}
+
+.card-item.item-4 {
+    grid-row: 1 / span 2;
+    grid-column: 4;
+    display: flex;
+    align-items: center;
+}
+
+.trip-header {
+    margin-top: 20px;
+}
+
+.trip-item-details-complete {
+    display: flex;
+    background: #14274e;
+    color: #fff;
+    justify-content: space-between;
+    padding: 10px 5px;
+    font-size: 12px;
+}
+
+table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #fff;
+}
+
+.table-container {
+    padding: 10px;
+    background: #fff;
+}
+
+table td,
+table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 12px;
+}
+
+table th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    background-color: #01c5c4;
+    color: white;
+}
+
+.blue-highlight {
+    color: #a6f6f1;
+}
+
+.yellow-highlight {
+    color: #f0a500;
+}
+
+.collapsable {
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.tripe-expense {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tripe-expense i {
+    color: #01c5c4;
+}
+
+td button:first-child {
+    margin-right: 5px;
+}
+
+tbody tr {
+    background-color: #f5f5f5;
+}
+
+tbody tr:first-child {
+    background-color: #fff;
+}

@@ -1,0 +1,29 @@
+.header {
+    background-color: #14274e;
+    max-height: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.header .left-container {
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.header .left-container .hamburger-icon i {
+    color: #fff;
+    padding-right: 10px;
+}
+
+.header .left-container .logo {
+    height: 20px;
+}
+
+.header .left-container .logo img {
+    max-width: 100%;
+    max-height: 100%;
+}
